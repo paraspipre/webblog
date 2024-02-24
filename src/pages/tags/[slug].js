@@ -36,7 +36,7 @@ const Tag = ({ tag, blogs, query }) => {
             <div className="flex flex-col items-center gap-4 pb-5">
                <h1 className="mb-[30px] main-head font-bold text-center">{tag.name}</h1>
                         {blogs.map((b, i) => (
-                           <div>
+                           <div key={i}>
                               <Card key={i} blog={b} />
                               <hr />
                            </div>

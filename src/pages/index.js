@@ -35,8 +35,8 @@ const Index = () => {
 
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
   
-          {data.map(card => (
-            <div className="card w-full">
+          {data.map(card , i => (
+            <div key={i} className="card w-full">
               <div className="card-header">
                 <img
                   src={card.image} alt="rover"

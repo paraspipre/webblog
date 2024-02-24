@@ -40,22 +40,22 @@ const Header = () => {
     <>
       <div id="nav">
         <Link legacyBehavior href="/">
-          <a id="logo">WEBBLOG</a>
+          <div id="logo">WEBBLOG</div>
         </Link>
         <div className="menu-container" >
           <Link legacyBehavior href="/blogs" passHref>
-            <a id="menulink" title="Blogs"  ><FaNewspaper/></a >
+            <div id="menulink" title="Blogs"  ><FaNewspaper/></div>
           </Link>
           <Link legacyBehavior href="/user/crud/blog" passHref>
-            <a id="menulink" title="create a blog"><FaPenToSquare/></a >
+            <div id="menulink" title="create a blog"><FaPenToSquare/></div>
           </Link>
           {!isAuth() && (
             <>
               <Link legacyBehavior href="/signin" passHref>
-                <a id="menulink" title="signIn" href="/signup" className="" ><PiSignInBold /></a >
+                <div id="menulink" title="signIn" href="/signup" className="" ><PiSignInBold /></div>
               </Link>
               <Link legacyBehavior href="/signup" passHref>
-                <a id="menulink" title="signUp" href="/signup"><FaUserPlus/></a>
+                <div id="menulink" title="signUp" href="/signup"><FaUserPlus/></div>
               </Link>
             </>
           )}
@@ -63,14 +63,14 @@ const Header = () => {
           {isAuth() && (
             <>
               <Link legacyBehavior href={isAuth().role === 1 ? "/admin" : "/user"} passHref>
-                <a id="menulink" title={`${isAuth().name}`} href={isAuth().role === 1 ? "/admin" : "/user"}>
+                <div id="menulink" title={`${isAuth().name}`} href={isAuth().role === 1 ? "/admin" : "/user"}>
                   <FaUser/>
-                </a >
+                </div>
               </Link>
               <Link legacyBehavior href="/signin" passHref>
-                <a id="menulink" title="signOut" onClick={() => signOut(() => Router.push("/signin"))}>
+                <div id="menulink" title="signOut" onClick={() => signOut(() => Router.push("/signin"))}>
                   <FaPowerOff/>
-                </a>
+                </div>
               </Link>
             </>
           )}
