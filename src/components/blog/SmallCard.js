@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import renderHTML from 'react-render-html';
+import HtmlParser from "html-react-parser";
 import moment from 'moment';
 import { API } from '../../config';
 
@@ -17,7 +17,7 @@ const SmallCard = ({ blog }) => {
             <Link legacyBehavior href={`/blogs/${blog.slug}`}>
                <span className="card-link">{blog.title}</span>
             </Link>
-            <div className="card-text my-2">{renderHTML(blog.excerpt.slice(0, 100))}</div>
+            <div className="card-text my-2">{HtmlParser(blog.excerpt.slice(0, 100))}</div>
          </div>
          <div className="" >
             Posted {moment(blog.updatedAt).fromNow()} by{' '}

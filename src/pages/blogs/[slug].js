@@ -5,7 +5,8 @@ import Layout from '../../components/Layout';
 import { useState, useEffect } from 'react';
 import { singleBlog, listRelated } from '../../actions/blog';
 import { API, DOMAIN, APP_NAME, FB_APP_ID } from '../../config';
-import renderHTML from 'react-render-html';
+// import renderHTML from 'react-render-html';
+import HtmlParser from "html-react-parser";
 import moment from 'moment';
 import SmallCard from '../../components/blog/SmallCard';
 import DisqusThread from '../../components/DisqusThread';
@@ -114,7 +115,7 @@ const SingleBlog = ({ blog, query }) => {
                   </div>
 
                   <div className="px-[20px]">
-                     <div style={{ wordWrap: "break-word", color: 'white' }} className="">{renderHTML(blog?.body)}</div>
+                     <div style={{ wordWrap: "break-word", color: 'white' }} className="">{HtmlParser(blog?.body)}</div>
 
                   </div>
 

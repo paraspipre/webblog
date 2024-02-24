@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { signup, isAuth, preSignup } from "../../actions/auth";
 import Router from "next/router";
 import Link from "next/link"
-import LoginGoogle from './LoginGoogle';
+// import LoginGoogle from './LoginGoogle';
 import { RotatingLines } from "react-loader-spinner"
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 const SignupComponent = () => {
