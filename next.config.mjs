@@ -5,7 +5,7 @@ const nextConfig = {
     APP_NAME: 'WEBBLOG',
     API_PRODUCTION: 'https://lazy-cyan-bluefish-fez.cyclic.app',
     API_DEVELOPMENT: 'http://localhost:8000',
-    PRODUCTION: false,
+    PRODUCTION: true,
     DOMAIN_DEVELOPMENT: 'http://localhost:3000',
     DOMAIN_PRODUCTION: 'https://parasblog.vercel.app',
     DISQUS_SHORTNAME: 'blog-aeur4pjckv',
