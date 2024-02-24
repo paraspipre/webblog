@@ -1,10 +1,13 @@
 import { signup } from '@/actions/auth';
+import Router from 'next/router';
 import React from 'react'
 
 const Activate = () => {
-  return (
-    <div>[token]</div>
-  )
+   return (
+      <div>Account is activated please login
+         <button onClick={() => Router.push('/signin')} className="btn mt-4" >Sign In</button>
+      </div>
+   )
 }
 
 Activate.getInitialProps = ({ query }) => {
@@ -12,7 +15,7 @@ Activate.getInitialProps = ({ query }) => {
       if (data?.error) {
          console.log(data?.error);
       } else {
-         return { message:"done"};
+         return { message: "done" };
       }
    });
 };

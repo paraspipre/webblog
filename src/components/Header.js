@@ -68,7 +68,7 @@ const Header = () => {
                 </div>
               </Link>
               <Link legacyBehavior href="/signin" passHref>
-                <div id="menulink" title="signOut" onClick={() => signOut(() => Router.push("/signin"))}>
+                <div id="menulink" title="signOut" onClick={() => signout(() => Router.push("/signin"))}>
                   <FaPowerOff/>
                 </div>
               </Link>

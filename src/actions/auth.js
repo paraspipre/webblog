@@ -58,12 +58,12 @@ export const signin = (user) => {
     }).catch(err => console.log(err))
 }
 
-export const signout = (next) => {
+export const signout = async (next) => {
     removeCookie('token')
     removeLocalStorage('user')
     next()
 
-    return fetch(`${API}/signout`, {
+    return await fetch(`${API}/signout`, {
         method: 'GET'
     }).then(response => {
         console.log('signout success')

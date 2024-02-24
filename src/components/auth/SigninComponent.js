@@ -1,6 +1,6 @@
 import Router from "next/router";
 import React, { useState, useEffect } from "react";
-import { signin, authenticate, isAuth } from "../../actions/auth";
+import { signin, authenticate, isAuth, forgotPassword } from "../../actions/auth";
 import Link from 'next/link';
 import LoginGoogle from './LoginGoogle';
 import { RotatingLines } from "react-loader-spinner";
@@ -49,8 +49,18 @@ const SigninComponent = () => {
 
 	const handleForgot = (e) => {
 		e.preventDefault();
-		
+		setOpen(false)
+		setValues({ ...values, loading: true, error: false })
+		const user = { email }
+		forgotPassword(user).then(data => {
+			if (data?.error) {
+				setValues({ ...values, error: data?.error, loading: false })
+			} else {
+				setValues({ ...values, name: '', email: "", password: '', error: '', loading: false, message: data?.message, showForm: false })
+			}
+		})
 	}
+
 
 	const handleChange = name => (e) => {
 		setValues({ ...values, error: false, [name]: e.target.value });
@@ -116,7 +126,7 @@ const SigninComponent = () => {
 		</div>
 
 		{open && <div className="w-full h-full fixed top-0 right-0 flex flex-col items-center justify-center backdrop-blur-xl">
-			<form className="w-[50%] bg-[#9153f4] p-4 rounded-[12px]" onSubmit={handleForgot}>
+			<form className="w-[50%] bg-[#9153f4] p-4 rounded-[12px]" onSubmit={(e) => handleForgot(e)}>
 				<div onClick={() => setOpen(false)} className="self-end cursor-pointer"><FaXmark /></div>
 				<div className="form-group">
 					<label className="lead sub-head">Email</label>
