@@ -1,4 +1,3 @@
-import renderHTML from 'react-render-html'
 import moment from 'moment'
 import Link from 'next/link'
 import { API } from '../../config'

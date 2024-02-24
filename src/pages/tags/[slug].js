@@ -4,7 +4,6 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import { singleTag } from '../../actions/tag';
 import { API, DOMAIN, APP_NAME, FB_APP_ID } from '../../config';
-import renderHTML from 'react-render-html';
 import moment from 'moment';
 import Card from '../../components/blog/Card';
 
