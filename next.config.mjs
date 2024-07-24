@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   publicRuntimeConfig: {
     APP_NAME: 'WEBBLOG',
-    API_PRODUCTION: 'https://webblog-iota.vercel.app',
+    API_PRODUCTION: 'https://webblog-server.onrender.com',
     API_DEVELOPMENT: 'http://localhost:8000',
     PRODUCTION: true,
     DOMAIN_DEVELOPMENT: 'http://localhost:3000',
